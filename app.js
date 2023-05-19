@@ -17,14 +17,14 @@ const textosLimpieza = [
 textosLimpieza.forEach((texto) => {
   const contenedor = document.createElement("article");
   contenedor.classList.add("texto");
-  contenedor.innerHTML = `<a class="btnDisparador btn btn-light mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
+  contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
   botonesTextoLimpieza.appendChild(contenedor);
 
   const btn = contenedor.querySelector("a");
   btn.addEventListener("click", () => {
     navigator.clipboard.writeText(texto.texto)
       .then(() => {
-        console.log("Texto copiado al portapapeles: ", texto.texto);
+        notification ();
       })
       .catch((error) => {
         console.error("Error al copiar al portapapeles: ", error);
@@ -61,14 +61,14 @@ const textosMeli = [
   textosMeli.forEach((texto) => {
     const contenedor = document.createElement("article");
     contenedor.classList.add("texto");
-    contenedor.innerHTML = `<a class="btnDisparador btn btn-light mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
+    contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
     botonesTextoMeli.appendChild(contenedor);
   
     const btn = contenedor.querySelector("a");
     btn.addEventListener("click", () => {
       navigator.clipboard.writeText(texto.texto)
         .then(() => {
-          console.log("Texto copiado al portapapeles: ", texto.texto);
+          notification ();
         })
         .catch((error) => {
           console.error("Error al copiar al portapapeles: ", error);
@@ -89,20 +89,24 @@ const textosMeli = [
     {
       titulo: "MAYORISTA",
       texto: "¡Buenas!\n\nMuchas gracias por escribirnos\n\nLe compartimos el formulario para asociarse al canal retail. Nuestro equipo analizará el caso y le brindará atención de acuerdo a la disponibilidad. En este momento no contamos con cupos pero esperamos poder sumar lugares para este año.\n\nhttps://docs.google.com/forms/d/e/1FAIpQLSc8ybrAfhpfKyeqG6Dtd6Bo94yOYxPdCyLGG4NotI6xebNyFA/viewform"
+    },
+    {
+      titulo: "TRACKING",
+      texto: "¡Hola!\n\nMuchas gracias por tu mensaje.\n\nVemos que el paquete se encuentra en manos del correo.\nTe dejamos por aquí el tracking generado por Andreani:\n\nhttps://www.andreani.com/#!/informacionEnvio/360000798133170"
     }
     ]
     
     textosCarters.forEach((texto) => {
       const contenedor = document.createElement("article");
       contenedor.classList.add("texto");
-      contenedor.innerHTML = `<a class="btnDisparador btn btn-light mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
+      contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
       botonesCarters.appendChild(contenedor);
     
       const btn = contenedor.querySelector("a");
       btn.addEventListener("click", () => {
         navigator.clipboard.writeText(texto.texto)
           .then(() => {
-            console.log("Texto copiado al portapapeles: ", texto.texto);
+            notification ();
           })
           .catch((error) => {
             console.error("Error al copiar al portapapeles: ", error);
@@ -111,3 +115,21 @@ const textosMeli = [
     });
     
     
+
+    /////////////////////////////////////////////////////
+    //Toastify function //
+    /////////////////////////////////////////////////////
+    function notification () {
+    Toastify({
+      text: "COPIADO",
+      duration: 3000,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #00Z09b, #96c93d)",
+        
+      },
+      onClick: function(){} // Callback after click
+    }).showToast();}
