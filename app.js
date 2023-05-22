@@ -115,6 +115,34 @@ const textosMeli = [
     });
     
     
+    const textosGenerales = [
+   
+      {
+        
+          titulo: "sac",
+          texto: "Por repuestos o asistencia técnica deberías comunicarte con nuestra área de servicio de atención al cliente al mail postventa1@argentrade.net o al 0810 345 0447 Opción 1 de Lunes a Viernes de 9 a 15 hs."
+        
+      }
+      ]
+      
+      textosGenerales.forEach((texto) => {
+        const contenedor = document.createElement("article");
+        contenedor.classList.add("texto");
+        contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
+        botonesGenerales.appendChild(contenedor);
+      
+        const btn = contenedor.querySelector("a");
+        btn.addEventListener("click", () => {
+          navigator.clipboard.writeText(texto.texto)
+            .then(() => {
+              notification ();
+            })
+            .catch((error) => {
+              console.error("Error al copiar al portapapeles: ", error);
+            });
+        });
+      });
+      
 
     /////////////////////////////////////////////////////
     //Toastify function //
