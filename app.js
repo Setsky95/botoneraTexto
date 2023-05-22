@@ -5,7 +5,7 @@ const textosLimpieza = [
   texto: "¡Buen día!,\n\nAún no registramos el pago de su compra. Si fue correctamente realizado le pedimos nos de aviso compartiendo el comprobante del mismo junto al nombre del titular de la cuenta bancaria. De esta manera podremos identificar el ingreso y asociarlo al pedido. Puede hacerlo por esta vía o también a nuestro whatsapp 11-44026605 haciendo click en 👇 https://bit.ly/Whatsapp-Argentrade.\n\nQuedamos a disposición\nSaludos,\nEquipo Randers Argentrade"
 },
 {
-  titulo: "PAGO RACHAZADO LINL",
+  titulo: "PAGO RACHAZADO LINK",
   texto: "¡Buen día!,\n\nLamentablemente su compra fue cancelada ya que Mercado Pago, el gestor de cobros oficial de nuestra tienda, no pudo aprobar el uso de su tarjeta siendo ésta rechazada por los métodos automáticos de verificación de la plataforma. Si desea asistencia para reactivarla por favor escríbanos a nuestro whatsapp 11-44026605 o por el siguiente enlace 👇 https://bit.ly/Whatsapp-Argentrade con el número de orden de tu compra.\n\nQuedamos a disposición\nSaludos,\nEquipo"
 },
 {
@@ -17,7 +17,7 @@ const textosLimpieza = [
 textosLimpieza.forEach((texto) => {
   const contenedor = document.createElement("article");
   contenedor.classList.add("texto");
-  contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
+  contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 p-3" href="#" role="button">${texto.titulo}</a>`;
   botonesTextoLimpieza.appendChild(contenedor);
 
   const btn = contenedor.querySelector("a");
@@ -61,7 +61,7 @@ const textosMeli = [
   textosMeli.forEach((texto) => {
     const contenedor = document.createElement("article");
     contenedor.classList.add("texto");
-    contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
+    contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 p-3" href="#" role="button">${texto.titulo}</a>`;
     botonesTextoMeli.appendChild(contenedor);
   
     const btn = contenedor.querySelector("a");
@@ -99,7 +99,7 @@ const textosMeli = [
     textosCarters.forEach((texto) => {
       const contenedor = document.createElement("article");
       contenedor.classList.add("texto");
-      contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
+      contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 p-3" href="#" role="button">${texto.titulo}</a>`;
       botonesCarters.appendChild(contenedor);
     
       const btn = contenedor.querySelector("a");
@@ -116,19 +116,26 @@ const textosMeli = [
     
     
     const textosGenerales = [
-   
       {
-        
-          titulo: "sac",
-          texto: "Por repuestos o asistencia técnica deberías comunicarte con nuestra área de servicio de atención al cliente al mail postventa1@argentrade.net o al 0810 345 0447 Opción 1 de Lunes a Viernes de 9 a 15 hs."
-        
+        titulo: "SAC",
+        texto:
+          "Por repuestos o asistencia técnica deberías comunicarte con nuestra área de servicio de atención al cliente al mail postventa1@argentrade.net o al 0810 345 0447 Opción 1 de Lunes a Viernes de 9 a 15 hs.",
+      },
+      {
+        titulo: "ENVIOS ENVÍOPACK",
+        texto:
+          "Los envíos están a cargo de Envío Pack, una central de logística que dependiendo de tu localidad deriva al correo más conveniente.\nTrabajan con correos como OCA, Andesmar, Andreani, entre otros.",
+      },
+      {
+        titulo: "TRANSFERENCIA",
+        texto: "Debe realizar la compra seleccionando el pago vía transferencia. Una vez completados los datos, le llegará un email (le recomendamos revisar la casilla de spam) con la información para realizar el pago. Le pedimos que nos comparta el comprobante luego de concretarlo."
       }
-      ]
+    ];
       
       textosGenerales.forEach((texto) => {
         const contenedor = document.createElement("article");
         contenedor.classList.add("texto");
-        contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 px-2" href="#" role="button">${texto.titulo}</a>`;
+        contenedor.innerHTML = `<a class="btnDisparador btn btn-secondary mx-3 p-3" href="#" role="button">${texto.titulo}</a>`;
         botonesGenerales.appendChild(contenedor);
       
         const btn = contenedor.querySelector("a");
